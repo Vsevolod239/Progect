@@ -3,14 +3,19 @@ import time
 from tkinter import *
 from tkinter import messagebox
 import random
+from datetime import datetime
+current_datetime = datetime.now()
 root =Tk()
 root.title("Построение графиков функций")
 ger=Frame(root,width=150,bg='silver')
 ger.pack(side='left',fill='y')
 graph=Frame(root,height=600, width=700,bg='bisque2')
 graph.pack(side='left',fill='both',expand=3)
-c=Canvas(graph, height=600, width=700, bg='whitesmoke')
+c=Canvas(graph, height=640, width=740, bg='whitesmoke')
 c.pack(fill='both',expand=3)
+c.create_text(669,10,text=str(current_datetime))
+c.create_rectangle(702,0,750,15,fill="whitesmoke",outline='whitesmoke')
+c.create_rectangle(598,0,655,15,fill="whitesmoke",outline='whitesmoke')
 xmin=-5
 xmax=5
 ymax=5
@@ -22,13 +27,6 @@ x=0
 y=0
 x1=0
 k=0
-currentTime = int(time.strftime('%H'))
-if currentTime < 12 :
-     messagebox.showinfo("",'Good morning')
-if currentTime > 12 and currentTime < 18 :
-     messagebox.showinfo("",'Good afternoon')
-if currentTime > 18 :
-     messagebox._show("",'Good evening')
 c.create_line(maxx//2,maxy,maxx//2,0,fill='black',arrow=LAST)
 c.create_line(0,maxy//2,maxx,maxy//2,fill='black',arrow=LAST)
 x=-4
@@ -52,8 +50,18 @@ def ny(y):
     global ymax,ymin,maxy
     return round((y-ymax)/(ymax-ymin)*maxy)
 def com2():
+    c.create_rectangle(598, 0, 750, 15, fill="whitesmoke", outline='whitesmoke')
+    current_datetime = datetime.now()
+    c.create_text(669, 10, text=str(current_datetime))
+    c.create_rectangle(702, 0, 750, 15, fill="whitesmoke", outline='whitesmoke')
+    c.create_rectangle(598, 0, 655, 15, fill="whitesmoke", outline='whitesmoke')
     messagebox.showinfo('Справка','1)введите уравнение функции в поле функция\n2)подпишите оси в ячейках\n3)нажмите построить график')
 def com1():
+    c.create_rectangle(598, 0, 750, 15, fill="whitesmoke", outline='whitesmoke')
+    current_datetime = datetime.now()
+    c.create_text(669, 10, text=str(current_datetime))
+    c.create_rectangle(702, 0, 750, 15, fill="whitesmoke", outline='whitesmoke')
+    c.create_rectangle(598, 0, 655, 15, fill="whitesmoke", outline='whitesmoke')
     global fnt
     fnt=ent_f.get()
     yt(y,'red')
@@ -87,13 +95,17 @@ def yt(f,gfill):
 def y(x):
     return eval(fnt)
 def on_closing():
-
+    c.create_rectangle(598, 0, 750, 15, fill="whitesmoke", outline='whitesmoke')
+    current_datetime = datetime.now()
+    c.create_text(669, 10, text=str(current_datetime))
+    c.create_rectangle(702, 0, 750, 15, fill="whitesmoke", outline='whitesmoke')
+    c.create_rectangle(598, 0, 655, 15, fill="whitesmoke", outline='whitesmoke')
     if messagebox.askokcancel("Выход из приложения","Хотите выйти из приложения?"):
         root.destroy()
 
 root.protocol("WM_DELETE_WINDOW", on_closing)
 def com4():
-    c.create_rectangle(0,0,1000,1000,fill='white', outline='white')
+    c.create_rectangle(0,0,1000,1000,fill='whitesmoke', outline='whitesmoke')
     c.create_line(maxx // 2, maxy, maxx // 2, 0, fill='black', arrow=LAST)
     c.create_line(0, maxy // 2, maxx, maxy // 2, fill='black', arrow=LAST)
     x = -4
@@ -110,6 +122,11 @@ def com4():
             c.create_text(maxx // 2 + 10, x2, text=str(x))
         x += 1
     c.create_text(maxx // 2 + 12, maxy // 2 + 12, text=str(0))
+    c.create_rectangle(598, 0, 750, 15, fill="whitesmoke", outline='whitesmoke')
+    current_datetime = datetime.now()
+    c.create_text(669, 10, text=str(current_datetime))
+    c.create_rectangle(702, 0, 750, 15, fill="whitesmoke", outline='whitesmoke')
+    c.create_rectangle(598, 0, 655, 15, fill="whitesmoke", outline='whitesmoke')
 x4=15; h=20
 lb_f=Label(ger, text='функция',bg='silver')
 lb_f.place(x=x4, y=210, width=50, height=h)
