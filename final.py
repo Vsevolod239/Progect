@@ -49,7 +49,7 @@ def nx(x):
 def ny(y):
     global ymax,ymin,maxy
     return round((y-ymax)/(ymax-ymin)*maxy) 
-#строк 46-51 получение значений y и x для построения графика в функциях nx(x) и ny(y) соответственно
+#строки 46-51 получение значений y и x для построения графика в функциях nx(x) и ny(y) соответственно
 def com2():
     c.create_rectangle(598, 0, 750, 15, fill="whitesmoke", outline='whitesmoke')
     current_datetime = datetime.now() # строка 55 обновление времени
