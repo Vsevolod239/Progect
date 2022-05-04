@@ -72,7 +72,7 @@ def yt(f,gfill):
     k=random.randint(0,5) #строка 72 получение рандомного числа для построения графика случайным цветом
     if k==0:
         while x <= 4:
-            c.create_line(nx(x), -ny(y(x)), nx(x + dx), -ny(y(x + dx)), width=2, fill='yellow')
+            c.create_line(nx(x), -ny(y(x)), nx(x + dx), -ny(y(x + dx)), width=2, fill='black')
             x = x + dx
     if k==1:
         while x <= 4:
@@ -92,7 +92,7 @@ def yt(f,gfill):
             x = x + dx
     if k==5:
         while x <= 4:
-            c.create_line(nx(x), -ny(y(x)), nx(x + dx), -ny(y(x + dx)), width=2, fill='aqua')
+            c.create_line(nx(x), -ny(y(x)), nx(x + dx), -ny(y(x + dx)), width=2, fill='golden')
             x = x + dx
     #строки 62-96 построение графика 1 из 6 цветов соответствующего числу полученному случайным образом(код в строке 72)
 def y(x):
